@@ -11,7 +11,7 @@ class ApplicationController < Sinatra::Base
   end
   
   post '/result' do
-    
+    params
   end
   
 end
