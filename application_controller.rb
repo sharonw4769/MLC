@@ -1,4 +1,4 @@
-require 'dotendv/load'
+require 'dotenv/load'
 require 'bundler'
 Bundler.require
 
