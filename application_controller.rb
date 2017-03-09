@@ -1,3 +1,4 @@
+#shotgun -p $PORT -o $IP
 require 'dotenv/load'
 require 'bundler'
 Bundler.require
@@ -11,7 +12,10 @@ class ApplicationController < Sinatra::Base
   end
   
   post '/result' do
-    params
+    puts params
+    country_id = params[:weather]
+    @country = get_weather(country_id)
+    erb :result
   end
   
 end
