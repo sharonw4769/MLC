@@ -20,9 +20,7 @@ def get_weather(city_name, country_name)
     uri = URI(url)
     response = Net::HTTP.get(uri)
     weather = JSON.parse(response)
-    name = JSON.parse(response) 
-    name["name"]
-    weather["weather"]
-    
+    weather["weather"][0]["main"]
+
 end
  puts get_weather("Brooklyn","us")
