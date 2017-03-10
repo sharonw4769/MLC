@@ -22,4 +22,4 @@ def get_weather(city_name, country_name)
     weather= JSON.parse(response)
     weather["main"]
 end
- puts get_weather("Tokyo","jp")
+ puts get_weather("Brooklyn","us")
