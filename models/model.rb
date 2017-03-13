@@ -28,3 +28,5 @@ gif = JSON.parse(response)
 pp JSON.parse(response)
 puts gif[""]
 
+#puts get_weather("Brooklyn","us")
+
