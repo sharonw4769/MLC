@@ -23,4 +23,4 @@ def get_weather(city_name, country_name)
     weather["weather"][0]["main"] 
 
 end
- puts get_weather("Brooklyn","us")
+ #puts get_weather("Brooklyn","us")
