@@ -18,7 +18,7 @@ def get_weather(city_name, country_name)
     uri = URI(url)
     response = Net::HTTP.get(uri)
     weather = JSON.parse(response)
-    weather["weather"][0]["main"] 
+    weather["weather"][0]["main"]
 end
 
 # url = "http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC"
