@@ -19,7 +19,9 @@
   <body>
     
     <div class="container-fluid">
-      <h1> <%= @user_result %> </h1>
+      <h1> <%= @user_result[:weather] %> </h1>
+      <h2> Temp: </h2>
+      <h2> Description: <%= @user_result[:description] %><  </h2>
     </div>
     
   </body>
