@@ -24,7 +24,7 @@ def get_weather(city_name, country_name)
     uri = URI(url)
     response = Net::HTTP.get(uri)
     weather = JSON.parse(response)
-    convert = -457+ ((1.8 * weather["main"]["temp"])-2)
+    convert = -457 + ((1.8 * weather["main"]["temp"])-2)
 {:weather => weather["weather"][0]["main"], :description => weather["weather"][0]["description"], :temp => convert.round }
 
 
