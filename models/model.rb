@@ -45,4 +45,4 @@ resp = Net::HTTP.get_response(URI.parse(url))
 buffer = resp.body
 result = JSON.parse(buffer)
 end
-pp get_gif("snow"," ")
+# pp get_gif("snow"," ")
