@@ -14,9 +14,6 @@ require 'pp'
 # # puts weather["weather"] # puts the information for weather
 # # puts weather["name"] # puts name of city 
 # # puts weather["weather"][0]["description"] # puts description
-# puts weather["weather"]["temp"].to_i
-
-
 
 
 def get_weather(city_name, country_name)
@@ -24,10 +21,11 @@ def get_weather(city_name, country_name)
     uri = URI(url)
     response = Net::HTTP.get(uri)
     weather = JSON.parse(response)
-{:weather => weather["weather"][0]["main"], :description => weather["weather"][0]["description"], :temp => weather["weather"][][] }
+    convert = -457 + ((1.8 * weather["main"]["temp"])-2)
+{:weather => weather["weather"][0]["main"], :description => weather["weather"][0]["description"], :temp => convert.round }
+
+
 end
-
-
 
 
 # url = "http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC"
