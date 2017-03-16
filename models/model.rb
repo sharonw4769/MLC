@@ -5,7 +5,6 @@ require 'json'
 require 'pp'
 
 
-
 # url = 'http://api.openweathermap.org/data/2.5/weather?q=Brooklyn,us&appid=c64fc3bf3a17ec1edd28765eb1bf1a30'
 # uri = URI(url)
 # response = Net::HTTP.get(uri)
@@ -14,9 +13,8 @@ require 'pp'
 # # puts weather["weather"] # puts the information for weather
 # # puts weather["name"] # puts name of city 
 # # puts weather["weather"][0]["description"] # puts description
+
 # puts weather["weather"]["temp"].to_i
-
-
 
 
 def get_weather(city_name, country_name)
@@ -24,18 +22,26 @@ def get_weather(city_name, country_name)
     uri = URI(url)
     response = Net::HTTP.get(uri)
     weather = JSON.parse(response)
-{:weather => weather["weather"][0]["main"], :description => weather["weather"][0]["description"], :temp => weather["weather"][][] }
+    convert = -457 + ((1.8 * weather["main"]["temp"])-2)
+{
+    :weather => weather["weather"][0]["main"], :description => weather["weather"][0]["description"], :temp => convert.round 
+    
+}
 end
+# puts get_weather("Brooklyn","us")
 
-
-
-
-# url = "http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC"
-# uri = URI(url)
-# response = Net::HTTP.get(uri)
-# gif = JSON.parse(response)
-# pp JSON.parse(response)
-# puts gif[""]
-
-#puts get_weather("Brooklyn","us")
-
+# def get_gif(weather, gif)
+#     url = "http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC"
+#     uri = URI(url)
+#     response = Net::HTTP.get(uri)
+#     gif = JSON.parse(response)
+#     pp JSON.parse(response)
+# end
+# puts get_gif[snow,""]
+def get_gif(value, gif)
+url = "http://api.giphy.com/v1/gifs/search?q=#{value}&api_key=dc6zaTOxFJmzC"
+resp = Net::HTTP.get_response(URI.parse(url))
+buffer = resp.body
+result = JSON.parse(buffer) 
+end
+pp get_gif("snow"," ")

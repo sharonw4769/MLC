@@ -14,11 +14,13 @@ h1 {
 h2 {
     font-family: 'Fjalla One', sans-serif;
     text-align: center;
+    font-size: 50px;
 }
 
 h3 {
     font-family: 'Fjalla One', sans-serif;
     text-align: center;
+    font-size: 30px;
 }
 form {
     font-family: 'Fjalla One', sans-serif;
