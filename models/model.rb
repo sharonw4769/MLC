@@ -38,20 +38,13 @@ end
 #     gif = JSON.parse(response)
 #     pp JSON.parse(response)
 # end
+
+def get_gif(value, gif)
 url = "http://api.giphy.com/v1/gifs/search?q=#{value}&api_key=dc6zaTOxFJmzC"
     uri = URI(url)
     response = Net::HTTP.get(uri)
     gif = JSON.parse(response)
     #pp JSON.parse(response)
-    puts gif["data"][0]["url"]
-
-
-
-# def get_gif(value, gif)
-# url = "http://api.giphy.com/v1/gifs/search?q=#{value}&api_key=dc6zaTOxFJmzC"
-# resp = Net::HTTP.get_response(URI.parse(url))
-# buffer = resp.body
-# result = JSON.parse(buffer)
-# end
-# #pp get_gif("snow"," ")
-# puts result[:images]
+    gif["data"][0]["url"]
+end
+# pp get_gif("rain"," ")
