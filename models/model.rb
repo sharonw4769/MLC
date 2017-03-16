@@ -1,5 +1,6 @@
 #http://samples.openweathermap.org/data/2.5/forecast?q=M%C3%BCnchen,DE&appid=b1b15e88fa797225412429c1c50c122a1
 # shotgun -p $PORT -o $IP
+# http://jsonviewer.stack.hu/#http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC  --->(JSON for Gif API)
 require 'net/http'
 require 'json'
 require 'pp'
@@ -37,12 +38,20 @@ end
 #     gif = JSON.parse(response)
 #     pp JSON.parse(response)
 # end
-# puts get_gif[snow,""]
+url = "http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=dc6zaTOxFJmzC"
+    uri = URI(url)
+    response = Net::HTTP.get(uri)
+    gif = JSON.parse(response)
+    #pp JSON.parse(response)
+    puts gif["data"][0]["url"]
 
-def get_gif(value, gif)
-url = "http://api.giphy.com/v1/gifs/search?q=#{value}&api_key=dc6zaTOxFJmzC"
-resp = Net::HTTP.get_response(URI.parse(url))
-buffer = resp.body
-result = JSON.parse(buffer)
-end
-# pp get_gif("snow"," ")
+
+
+# def get_gif(value, gif)
+# url = "http://api.giphy.com/v1/gifs/search?q=#{value}&api_key=dc6zaTOxFJmzC"
+# resp = Net::HTTP.get_response(URI.parse(url))
+# buffer = resp.body
+# result = JSON.parse(buffer)
+# end
+# #pp get_gif("snow"," ")
+# puts result[:images]
