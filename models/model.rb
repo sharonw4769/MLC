@@ -14,7 +14,7 @@ require 'pp'
 # # puts weather["name"] # puts name of city 
 # # puts weather["weather"][0]["description"] # puts description
 
-# puts weather["weather"]["temp"].to_i
+
 
 
 def get_weather(city_name, country_name)
