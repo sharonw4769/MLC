@@ -17,7 +17,7 @@ class ApplicationController < Sinatra::Base
     country_name = params[:country_name]
     @user_result = get_weather(city_name, country_name)
 
-    puts params
+
     
     @user_result_with_gif = get_gif(@user_result[:weather])
     puts @user_result_with_gif

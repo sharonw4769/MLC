@@ -45,6 +45,6 @@ url = "http://api.giphy.com/v1/gifs/search?q=#{weather}&api_key=dc6zaTOxFJmzC"
     response = Net::HTTP.get(uri)
     gif = JSON.parse(response)
     #pp JSON.parse(response)
-    gif["data"][0]["url"]
+    gif["data"][0]["images"][0]["url"]
 end
 # pp get_gif("rain"," ")
