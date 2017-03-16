@@ -39,8 +39,8 @@ end
 #     pp JSON.parse(response)
 # end
 
-def get_gif(value, gif)
-url = "http://api.giphy.com/v1/gifs/search?q=#{value}&api_key=dc6zaTOxFJmzC"
+def get_gif(weather)
+url = "http://api.giphy.com/v1/gifs/search?q=#{weather}&api_key=dc6zaTOxFJmzC"
     uri = URI(url)
     response = Net::HTTP.get(uri)
     gif = JSON.parse(response)
