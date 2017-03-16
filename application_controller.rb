@@ -12,16 +12,12 @@ class ApplicationController < Sinatra::Base
   end
   
   post '/result' do
-    puts params
-    city_name = params[:city_name]
-    country_name = params[:country_name]
-    @user_result = get_weather(city_name, country_name)
-
-
-    
-    @user_result_with_gif = get_gif(@user_result[:weather])
+    puts params #Return user input back to the terminal
+    city_name = params[:city_name] #Return the City name to the terminal
+    country_name = params[:country_name]#Return the Country name to the terminal
+    @user_result = get_weather(city_name, country_name)#Variable that holds what the user types in to show weather info
+    @user_result_with_gif = get_gif(@user_result[:weather])#Variable that gets put into result.erb to show the gif
     puts @user_result_with_gif
-    # @user_final_gif = url(@user_result_with_gif)
     erb :result
   end
   
