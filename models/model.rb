@@ -4,6 +4,7 @@ require 'net/http'
 require 'json'
 require 'pp'
 
+
 # url = 'http://api.openweathermap.org/data/2.5/weather?q=Brooklyn,us&appid=c64fc3bf3a17ec1edd28765eb1bf1a30'
 # uri = URI(url)
 # response = Net::HTTP.get(uri)
@@ -12,6 +13,9 @@ require 'pp'
 # # puts weather["weather"] # puts the information for weather
 # # puts weather["name"] # puts name of city 
 # # puts weather["weather"][0]["description"] # puts description
+
+# puts weather["weather"]["temp"].to_i
+
 
 def get_weather(city_name, country_name)
     url = "http://api.openweathermap.org/data/2.5/weather?q=#{city_name},#{country_name}&appid=c64fc3bf3a17ec1edd28765eb1bf1a30"
