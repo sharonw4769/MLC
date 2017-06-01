@@ -18,9 +18,9 @@ end
 
 
 def get_gif(weather)
-url = "http://api.giphy.com/v1/gifs/search?q=#{weather}&api_key=dc6zaTOxFJmzC"
+url = "http://api.giphy.com/v1/gifs/search?q=#{weather}/random/&api_key=dc6zaTOxFJmzC"
     uri = URI(url)
     response = Net::HTTP.get(uri)
     gif = JSON.parse(response)
-   gif["data"][0]["images"]["fixed_height"]["url"] #Hash that holds the Gif Images
+    gif["data"].sample["images"]["fixed_height"]["url"] #Hash that holds the Gif Images
 end
